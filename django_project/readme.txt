@@ -3,4 +3,5 @@ After setting up tha Django evironemnt and completing all requirements I designe
 I built all the core backend functionalities for the blog. 
 I defined the fronted part using HTML, Bootstrap, CSS, and integrating JavaScript-driven functionalities.
 I tested for functionality, responsiveness and security.
-Hosted application on Render.
+Hosted application on Render https://fivedjango-project.onrender.com
+GitHub link https://github.com/ale6885/5.-Django-Project_old
