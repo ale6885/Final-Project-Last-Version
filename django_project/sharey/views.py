@@ -64,7 +64,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'sharey/about.html', {'title': 'About'})
 
-
 def current_weather(request):
     api_key = 'YOUR_WEATHER_API_KEY'
     city = request.GET.get('city')  # Assuming the city name is passed as a query parameter

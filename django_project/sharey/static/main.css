@@ -126,3 +126,13 @@ a.article-title:hover {
     font-size: 1.8rem;
   }
 }
+
+/* Current Weather Styles */
+.current-weather {
+  margin-bottom: 30px;
+}
+
+/* Forecast Styles */
+.forecast {
+  margin-top: 30px;
+}
