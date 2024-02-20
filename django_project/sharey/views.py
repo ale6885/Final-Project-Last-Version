@@ -10,6 +10,9 @@ from django.views.generic import (
 from django.http import HttpResponse
 from .models import Post
 
+from django.shortcuts import render
+import requests
+
 # Create your views here.x
 def home(request):
     context = {
@@ -60,3 +63,20 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'sharey/about.html', {'title': 'About'})
+
+
+def current_weather(request):
+    api_key = 'YOUR_WEATHER_API_KEY'
+    city = request.GET.get('city')  # Assuming the city name is passed as a query parameter
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={Amsterdam}&appid={api_key}'
+    response = requests.get(url)
+    data = response.json()
+    return render(request, 'weather/current_weather.html', {'weather_data': data})
+
+def forecast(request):
+    api_key = 'YOUR_WEATHER_API_KEY'
+    city = request.GET.get('city')
+    url = f'https://api.openweathermap.org/data/2.5/forecast?q={Amsterdam}&appid={api_key}'
+    response = requests.get(url)
+    data = response.json()
+    return render(request, 'weather/forecast.html', {'forecast_data': data})
